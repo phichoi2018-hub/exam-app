@@ -1,0 +1,310 @@
+{
+  "exam_1775023324474": {
+    "id": "exam_1775023324474",
+    "title": "유형별 학습 실수와 그 계산",
+    "grade": "중3",
+    "subject": "수학",
+    "teacher": "브라이언 선생님",
+    "difficulty": "기본",
+    "totalQuestions": 37,
+    "questions": [
+      {
+        "no": 1,
+        "typeName": "제곱근 구하기",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "②",
+        "explanation": ""
+      },
+      {
+        "no": 2,
+        "typeName": "제곱근의 성질을 이용한 계산",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "5",
+        "explanation": ""
+      },
+      {
+        "no": 3,
+        "typeName": "√Ax가 자연수가 되도록 하는 자연수 x의 값 구하기",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "③",
+        "explanation": ""
+      },
+      {
+        "no": 4,
+        "typeName": "√A/x가 자연수가 되도록 하는 자연수 x의 값 구하기",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "12",
+        "explanation": ""
+      },
+      {
+        "no": 5,
+        "typeName": "√(A-x)가 정수 또는 자연수가 되도록 하는 자연수 x의 값 구하기",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "14",
+        "explanation": ""
+      },
+      {
+        "no": 6,
+        "typeName": "제곱근을 포함한 부등식",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "21",
+        "explanation": ""
+      },
+      {
+        "no": 7,
+        "typeName": "유리수와 무리수의 구별",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "①",
+        "explanation": ""
+      },
+      {
+        "no": 8,
+        "typeName": "무리수의 이해",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "①",
+        "explanation": ""
+      },
+      {
+        "no": 9,
+        "typeName": "제곱근의 나눗셈",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "10",
+        "explanation": ""
+      },
+      {
+        "no": 10,
+        "typeName": "제곱근표에 없는 제곱근의 값 구하기",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "⑤",
+        "explanation": ""
+      },
+      {
+        "no": 11,
+        "typeName": "분모의 유리화",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "32",
+        "explanation": ""
+      },
+      {
+        "no": 12,
+        "typeName": "제곱근의 곱셈과 나눗셈의 도형에의 활용; 정삼각형의 높이와 넓이",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "12cm",
+        "explanation": ""
+      },
+      {
+        "no": 13,
+        "typeName": "곱셈 공식(1); 합의 제곱",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "15",
+        "explanation": ""
+      },
+      {
+        "no": 14,
+        "typeName": "곱셈 공식(2); 차의 제곱",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "③",
+        "explanation": ""
+      },
+      {
+        "no": 15,
+        "typeName": "곱셈 공식(3); 합과 차의 곱",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "④",
+        "explanation": ""
+      },
+      {
+        "no": 16,
+        "typeName": "곱셈 공식(4); 일차항의 계수가 1인 두 일차식의 곱",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "⑤",
+        "explanation": ""
+      },
+      {
+        "no": 17,
+        "typeName": "곱셈 공식(5); 일차항의 계수가 1이 아닌 두 일차식의 곱",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "8",
+        "explanation": ""
+      },
+      {
+        "no": 18,
+        "typeName": "곱셈 공식(종합)",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "31",
+        "explanation": ""
+      },
+      {
+        "no": 19,
+        "typeName": "공통부분이 있는 식의 전개",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "④",
+        "explanation": ""
+      },
+      {
+        "no": 20,
+        "typeName": "곱셈 공식의 도형에의 활용; 일정한 간격만큼 떨어져 있는 경우",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "④",
+        "explanation": ""
+      },
+      {
+        "no": 21,
+        "typeName": "곱셈 공식을 이용한 두 수의 곱의 계산",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "2001",
+        "explanation": ""
+      },
+      {
+        "no": 22,
+        "typeName": "곱셈 공식을 이용한 복잡한 수의 계산",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "③",
+        "explanation": ""
+      },
+      {
+        "no": 23,
+        "typeName": "곱셈 공식을 이용한 수의 계산; 제곱근을 포함한 경우",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "⑤",
+        "explanation": ""
+      },
+      {
+        "no": 24,
+        "typeName": "식의 값 구하기(2); 두 수의 합 또는 차와 곱이 주어진 경우",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "5",
+        "explanation": ""
+      },
+      {
+        "no": 25,
+        "typeName": "식의 값 구하기(5); 식을 먼저 간단히 하는 경우",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "④",
+        "explanation": ""
+      },
+      {
+        "no": 26,
+        "typeName": "식의 값 구하기(6); 주어진 수를 변형하여 식에 대입하는 경우",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "-7",
+        "explanation": ""
+      },
+      {
+        "no": 27,
+        "typeName": "식의 값 구하기(7); 무리수의 정수 부분과 소수 부분",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "2",
+        "explanation": ""
+      },
+      {
+        "no": 28,
+        "typeName": "인수분해 공식(1); a²±2ab+b²=(a±b)²",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "16",
+        "explanation": ""
+      },
+      {
+        "no": 29,
+        "typeName": "인수분해 공식(2); a²-b²=(a+b)(a-b)",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "9",
+        "explanation": ""
+      },
+      {
+        "no": 30,
+        "typeName": "인수분해 공식(5); x²+(a+b)xy+aby²=(x+ay)(x+by)",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "④",
+        "explanation": ""
+      },
+      {
+        "no": 31,
+        "typeName": "이차방정식의 한 근이 주어졌을 때, 미지수의 값 구하기",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "3/2",
+        "explanation": ""
+      },
+      {
+        "no": 32,
+        "typeName": "이차방정식의 한 근이 문자로 주어졌을 때, 식의 값 구하기",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "⑤",
+        "explanation": ""
+      },
+      {
+        "no": 33,
+        "typeName": "이차방정식의 한 근이 문자로 주어졌을 때, 식의 값 구하기",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "③",
+        "explanation": ""
+      },
+      {
+        "no": 34,
+        "typeName": "AB=0의 성질을 이용한 이차방정식의 풀이",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "②",
+        "explanation": ""
+      },
+      {
+        "no": 35,
+        "typeName": "인수분해를 이용한 이차방정식의 풀이",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "11/9",
+        "explanation": ""
+      },
+      {
+        "no": 36,
+        "typeName": "이차방정식의 근의 활용",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "③",
+        "explanation": ""
+      },
+      {
+        "no": 37,
+        "typeName": "두 이차방정식의 공통인 근",
+        "correctRate": 0,
+        "difficulty": "기본",
+        "answer": "52",
+        "explanation": ""
+      }
+    ],
+    "createdAt": "2026-04-01T06:02:04.474Z"
+  }
+}
