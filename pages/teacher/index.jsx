@@ -1,7 +1,7 @@
 /**
  * pages/teacher/index.jsx
  * 브라이언 선생님 관리 대시보드
- * local / deployed teacher dashboard
+ * http://localhost:3000/teacher
  */
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
@@ -940,6 +940,9 @@ export default function TeacherPage() {
     }
     return `/exam/${examId}`;
   }
+    setShowShareSettings(false);
+    alert('카톡 공유 주소를 저장했습니다.');
+  }
 
   function copyKakaoMessage(exam) {
     const url = buildShareUrl(exam.id);
@@ -1028,43 +1031,6 @@ export default function TeacherPage() {
           <StatCard icon="📊" value={wrongStudentCount}  label="오답관리 학생" color="#D97706"/>
           <StatCard icon="🙋" value={unreadQ}            label="미확인 질문"  color={unreadQ>0?'#EF4444':'#8B95A7'}/>
         </div>
-
-        <div style={{ ...card, padding:'14px 16px', marginBottom:18 }}>
-          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', gap:10, flexWrap:'wrap' }}>
-            <div>
-              <div style={{ fontSize:13, fontWeight:700, marginBottom:4 }}>카톡 전송용 기본 주소</div>
-              <div style={{ fontSize:12, color:'#5A6375', wordBreak:'break-all' }}>
-                {shareBaseUrl || '주소를 설정해 주세요'}
-              </div>
-              {(shareBaseUrl || '').includes('localhost') && (
-                <div style={{ fontSize:11, color:'#D97706', marginTop:6 }}>
-                  localhost 상태면 다른 휴대폰에서 안 열립니다. 컴퓨터 IPv4 주소로 바꿔 주세요.
-                </div>
-              )}
-            </div>
-            <button onClick={() => setShowShareSettings(true)} style={btnS}>설정</button>
-          </div>
-        </div>
-
-        {showShareSettings && (
-          <div style={{ ...card, padding:'16px 18px', marginBottom:18, border:'1px solid #BFDBFE', background:'#F8FBFF' }}>
-            <div style={{ fontSize:14, fontWeight:800, marginBottom:10 }}>🌐 카톡 공유 주소 설정</div>
-            <div style={{ fontSize:12, color:'#5A6375', marginBottom:10 }}>
-              예: http://192.168.0.15:3000
-            </div>
-            <input
-              value={shareBaseUrl}
-              onChange={(e) => setShareBaseUrl(e.target.value)}
-              style={{ ...inp, marginBottom:10 }}
-              placeholder="http://192.168.0.15:3000"
-            />
-            <div style={{ display:'flex', gap:8, flexWrap:'wrap' }}>
-              <button onClick={saveShareBaseUrl} style={btnP}>저장</button>
-              <button onClick={() => setShareBaseUrl(typeof window !== 'undefined' ? window.location.origin : '')} style={btnS}>현재 주소 넣기</button>
-              <button onClick={() => setShowShareSettings(false)} style={btnS}>닫기</button>
-            </div>
-          </div>
-        )}
 
         <div style={{ ...card, padding:'12px 16px', marginBottom:18, background:'#F8FBFF', border:'1px solid #BFDBFE' }}>
           <div style={{ fontSize:13, fontWeight:700, marginBottom:4 }}>📱 학생 링크는 자동 생성됩니다</div>
