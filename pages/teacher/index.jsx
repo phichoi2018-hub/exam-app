@@ -1,7 +1,7 @@
 /**
  * pages/teacher/index.jsx
  * 브라이언 선생님 관리 대시보드
- * http://localhost:3000/teacher
+ * local / deployed teacher dashboard
  */
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
@@ -884,18 +884,11 @@ export default function TeacherPage() {
   const [resultModal,  setResultModal]  = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [copiedId,     setCopiedId]     = useState('');
-  const [shareBaseUrl, setShareBaseUrl] = useState('');
-  const [showShareSettings, setShowShareSettings] = useState(false);
   const [qrExam, setQrExam] = useState(null);
 
   const selectedIdRef = useRef('');
   useEffect(() => { selectedIdRef.current = selectedId; }, [selectedId]);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const saved = window.localStorage.getItem('exam_share_base_url');
-    setShareBaseUrl(normalizeShareBaseUrl(saved || window.location.origin));
-  }, []);
 
   async function loadAll() {
     try {
@@ -942,18 +935,19 @@ export default function TeacherPage() {
   }
 
   function buildShareUrl(examId) {
-    const base = normalizeShareBaseUrl(shareBaseUrl || (typeof window !== 'undefined' ? window.location.origin : ''));
-    return `${base}/exam/${examId}`;
+    if (typeof window !== 'undefined') {
+      return `${window.location.origin}/exam/${examId}`;
+    }
+    return `/exam/${examId}`;
   }
 
-  function saveShareBaseUrl() {
-    const normalized = normalizeShareBaseUrl(shareBaseUrl);
-    setShareBaseUrl(normalized);
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem('exam_share_base_url', normalized);
-    }
-    setShowShareSettings(false);
-    alert('카톡 공유 주소를 저장했습니다.');
+  function copyKakaoMessage(exam) {
+    const url = buildShareUrl(exam.id);
+    const msg = `[수학 시험 링크]\n${exam.title}\n${url}\n\n이름을 입력하고 시험을 시작해 주세요.`;
+    navigator.clipboard.writeText(msg).then(() => {
+      setCopiedId(`kakao-${exam.id}`);
+      setTimeout(() => setCopiedId(''), 2000);
+    });
   }
 
   function copyLink(examId) {
@@ -1008,7 +1002,6 @@ export default function TeacherPage() {
             </div>
             <div style={{ display:'flex', gap:8 }}>
               <button onClick={loadAll} style={btnS}>🔄 새로고침</button>
-              <button onClick={() => setShowShareSettings(true)} style={btnS}>🌐 공유주소</button>
               <button onClick={() => setShowPromptMaker(true)} style={btnS}>🪄 JSON 요청문</button>
               <button onClick={() => setShowJsonImport(true)} style={btnS}>📥 JSON 가져오기</button>
               <button onClick={() => setModal('create')} style={{ ...btnP, display:'flex', alignItems:'center', gap:6, boxShadow:'0 2px 8px rgba(37,99,235,0.3)' }}>➕ 새 시험 만들기</button>
@@ -1073,6 +1066,13 @@ export default function TeacherPage() {
           </div>
         )}
 
+        <div style={{ ...card, padding:'12px 16px', marginBottom:18, background:'#F8FBFF', border:'1px solid #BFDBFE' }}>
+          <div style={{ fontSize:13, fontWeight:700, marginBottom:4 }}>📱 학생 링크는 자동 생성됩니다</div>
+          <div style={{ fontSize:12, color:'#5A6375', lineHeight:1.6 }}>
+            지금 보고 있는 사이트 주소를 기준으로 학생 접속 링크와 카톡 전송 문구가 자동으로 만들어집니다.
+          </div>
+        </div>
+
         {/* ══ 탭 1: 시험 목록 ══ */}
         {tab==='exams' && (
           <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
@@ -1110,7 +1110,10 @@ export default function TeacherPage() {
                       </div>
                       <div style={{ display:'flex', alignItems:'center', gap:6, flexWrap:'wrap' }}>
                         <button onClick={()=>copyLink(exam.id)} style={{ border:'none', background:copiedId===exam.id?'#F0FDF4':'#EFF6FF', color:copiedId===exam.id?'#16A34A':'#2563EB', borderRadius:6, padding:'3px 8px', fontSize:10, cursor:'pointer', fontFamily:'Noto Sans KR,sans-serif', fontWeight:600 }}>
-                          {copiedId===exam.id?'✓ 복사됨':'복사'}
+                          {copiedId===exam.id?'✓ 링크복사':'링크복사'}
+                        </button>
+                        <button onClick={()=>copyKakaoMessage(exam)} style={{ border:'none', background:copiedId===`kakao-${exam.id}`?'#F0FDF4':'#FEF3C7', color:copiedId===`kakao-${exam.id}`?'#16A34A':'#92400E', borderRadius:6, padding:'3px 8px', fontSize:10, cursor:'pointer', fontFamily:'Noto Sans KR,sans-serif', fontWeight:600 }}>
+                          {copiedId===`kakao-${exam.id}`?'✓ 카톡복사':'카톡문구'}
                         </button>
                         <button onClick={()=>setQrExam(exam)} style={{ border:'none', background:'#FFF7ED', color:'#C2410C', borderRadius:6, padding:'3px 8px', fontSize:10, cursor:'pointer', fontFamily:'Noto Sans KR,sans-serif', fontWeight:600 }}>
                           QR
